@@ -33305,7 +33305,11 @@ const App = () => {
     const diff = Math.abs(setDate.getTime() - today.getTime());
     const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
     const months = 12 - Math.abs(today.getMonth() - setDate.getMonth());
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, `${years} Year${years > 1 ? "s" : ""} and ${months} Months`));
+    const days = today.getDate();
+    const addS = (arg) => {
+        return arg > 1 ? "s" : "";
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, `${years} Year${addS(years)} ${months} Month${addS(months)} ${days} Day${addS(days)}`));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
