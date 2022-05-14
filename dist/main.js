@@ -33300,8 +33300,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const App = () => {
+    const [today, setToday] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(new Date());
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        const interval = setInterval(() => setToday(new Date()), 1000);
+        return () => clearInterval(interval);
+    });
     const setDate = new Date("9/9/2020");
-    const today = new Date();
     const diff = Math.abs(setDate.getTime() - today.getTime());
     let years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
     let months = 12 - Math.abs(today.getMonth() - setDate.getMonth());
@@ -33331,7 +33335,12 @@ const App = () => {
         }
         days += monthDays[today.getMonth()];
     }
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, `${asString(years, "Year")} ${asString(months, "Month")} ${asString(days, "Day")}`));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, `${asString(years, "Year")} 
+      ${asString(months, "Month")} 
+      ${asString(days, "Day")}
+      ${asString(today.getHours(), "Hour")}
+      ${asString(today.getMinutes(), "Minute")} 
+      ${asString(today.getSeconds(), "Second")}`));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 

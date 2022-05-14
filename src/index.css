@@ -10,14 +10,16 @@ body {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    animation: slideBg 30s linear infinite 0s;
+    backface-visibility: hidden;
+    animation: slideBg 20s linear infinite 0s;
     animation-timing-function: ease-in-out;
     background-image: url("../images/1.jpg");
 }
 
 #root {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
     background-color: black;
