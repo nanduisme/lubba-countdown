@@ -11,7 +11,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     backface-visibility: hidden;
-    animation: slideBg 18s linear infinite 0s;
+    animation: slideBg 100s linear infinite 0s;
     animation-timing-function: ease-in-out;
     background-image: url("../images/1.jpg");
 }
@@ -26,7 +26,15 @@ body {
     opacity: 50%;
     color: rgb(196, 196, 196);
     font-family: 'Fira Code', monospace;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.lbl {
+    font-size: 1rem;
+}
+
+.lbl:hover {
+    cursor: pointer;
 }
 
 @keyframes slideBg {
